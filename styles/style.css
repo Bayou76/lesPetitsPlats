@@ -1,0 +1,93 @@
+/* Style générale */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+}
+
+/* Style pour le header */
+header {
+    height: 667px;
+    background-image: url("/assets/img/fond/fondHeader.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style pour le logo */
+.logo {
+    width: 207px;
+    height: 25.26px;
+    position: absolute;
+    top: 51px;
+    left: 69px;
+}
+
+/* Style pour le texte du header */
+.header-text {
+    color: #FFD15B;
+    font-size: 44px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    width: 890px ;
+}
+
+
+
+/* Style pour la zone de recherche */
+.search-bar form{
+    margin-top: 20px;
+    width: 954px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.form-control{
+    padding: 24px 35px;
+    color: #7A7A7A;
+    font-size: 16px;
+    margin: auto;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+}
+
+.search-icon {
+    margin-left: auto;
+    background-color: #1B1B1B;
+    font-size: 32px;
+    border-radius: 10px;
+    width: 51px;
+    height: 52px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    left: -64px;
+}
+
+.search-icon:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+
+/*Boutton de recherche / trie*/
+
+.mini-search-bar {
+    display: none;
+  }
