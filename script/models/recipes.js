@@ -1,13 +1,13 @@
 class Recipe {
-	constructor(recipe) {
-		this._id = recipe.id;
-		this._image = recipe.image;
-		this._name = recipe.name;
-		this._servings = recipe.servings;
-		this._ingredients = recipe.ingredients;
-		this._time = recipe.time;
-		this._description = recipe.description;
-		this._appliance = recipe.appliance;
-		this._ustensils = recipe.ustensils;
+	constructor(data) {
+		this._id = data.id;
+		this._image = data.image;
+		this._name = data.name;
+		this._servings = data.servings;
+		this._ingredients = data.ingredients;
+		this._time = data.time;
+		this._description = data.description;
+		this._appliance = data.appliance;
+		this._ustensils = data.ustensils;
 	}
 }
