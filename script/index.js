@@ -46,18 +46,21 @@ class App {
         
     }
 
-    updateRecipeCount() {
-        const recipeCountElement = document.getElementById('number-recipes');
-        const RecipeCards = document.querySelectorAll('.recipe-card');
-        const numberRecipes = RecipeCards.length;
-        let recipeText;
-    
-        if (numberRecipes === 0) {
-            recipeText = 'Aucune recette';
-        } else {
-            recipeText = numberRecipes === 1 ? 'recette' : 'recettes';
-        }
-        recipeCountElement.textContent = numberRecipes === 0 ? recipeText : `${numberRecipes} ${recipeText}`;
+    updateRecipeCount(visibleRecipeCount = 0) {
+      const recipeCountElement = document.getElementById("number-recipes");
+      let totalRecipeCount = document.querySelectorAll(".card.mt-5").length;
+  
+      if (visibleRecipeCount === 0) {
+        recipeCountElement.textContent = `${totalRecipeCount} recette${totalRecipeCount > 1 ? "s" : ""
+          }`;
+      } else {
+        const recipeText =
+          visibleRecipeCount === 0
+            ? "Aucune recette"
+            : `${visibleRecipeCount} recette${visibleRecipeCount > 1 ? "s" : ""}`;
+        recipeCountElement.textContent = recipeText;
+      }
+  
     }
     
 }
