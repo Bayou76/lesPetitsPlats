@@ -1,6 +1,8 @@
 class App {
-    constructor() {}
-    
+    constructor() {
+      this.recipeCards = [];
+    }
+
     async main() {
         // Récupérer la div où ajouter les cartes de recette
         const recipesListDiv = document.getElementById("recipes-list");
@@ -44,24 +46,49 @@ class App {
         tag3ListDiv.appendChild($ustensilWrapper);
         this.updateRecipeCount();
         
-    }
+        const searchInput = document.getElementById("search-input");
+        searchInput.value = ""; // Vider la barre de recherche lors du chargement de la page
+        searchInput.addEventListener("input", () => {
+          filterAndDisplayRecipes();
+        });
 
-    updateRecipeCount() {
-        const recipeCountElement = document.getElementById('number-recipes');
-        const RecipeCards = document.querySelectorAll('.recipe-card');
-        const numberRecipes = RecipeCards.length;
-        let recipeText;
+        document.getElementById("tag1-input").addEventListener("input", () => {
+          filterAndDisplayTags();
+        });
+
+        document.getElementById("tag2-input").addEventListener("input", () => {
+          filterAndDisplayTags();
+        });
+
+        document.getElementById("tag3-input").addEventListener("input", () => {
+          filterAndDisplayTags();
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+          filterAndDisplayTags();
+        });
+
+        handleSelectedList();
+
+      }
+
+      updateRecipeCount(visibleRecipeCount = 0) {
+        const recipeCountElement = document.getElementById("number-recipes");
+        let totalRecipeCount = document.querySelectorAll(".card.mt-5").length;
     
-        if (numberRecipes === 0) {
-            recipeText = 'Aucune recette';
+        if (visibleRecipeCount === 0) {
+          recipeCountElement.textContent = `${totalRecipeCount} recette${totalRecipeCount > 1 ? "s" : ""
+            }`;
         } else {
-            recipeText = numberRecipes === 1 ? 'recette' : 'recettes';
+          const recipeText =
+            visibleRecipeCount === 0
+              ? "Aucune recette"
+              : `${visibleRecipeCount} recette${visibleRecipeCount > 1 ? "s" : ""}`;
+          recipeCountElement.textContent = recipeText;
         }
-        recipeCountElement.textContent = numberRecipes === 0 ? recipeText : `${numberRecipes} ${recipeText}`;
-    }
     
+      }
 }
-
 
 const app = new App();
 app.main();

@@ -5,7 +5,6 @@ class RecipeCard {
 
     createRecipeCard() {
         const $wrapper = document.createElement("div");
-        $wrapper.classList.add("col");
         $wrapper.setAttribute("id", `${this._recipe._id}`);
 
 		const cardIngredients = this._recipe._ingredients.map(ingredient => {

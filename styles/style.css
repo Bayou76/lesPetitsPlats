@@ -58,7 +58,7 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    width:954px;
+    width: 954px;
 }
 
 .container-search {
@@ -262,7 +262,7 @@ header {
 .tag1-list li,
 .tag2-list li,
 .tag3-list li {
-    margin:13px 16px;
+    margin: 13px 16px;
 }
 
 .tag1-list p,
@@ -288,16 +288,16 @@ header {
 .tag1-list p:not(.selected)::before,
 .tag2-list p:not(.selected)::before,
 .tag3-list p:not(.selected)::before {
-    content: ""; 
+    content: "";
     position: absolute;
-    top: -10px; 
-    bottom: -10px; 
+    top: -10px;
+    bottom: -10px;
     left: 0;
     right: 0;
     background: #FFD15B;
-    z-index: -1; 
-    opacity: 0; 
-    transition: opacity 0.1s linear; 
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.1s linear;
 }
 
 
@@ -305,7 +305,7 @@ header {
 
 /*Boutton de recherche / trie*/
 
-.btn-white{
+.btn-white {
     display: inline-flex;
     font-family: Manrope;
     font-size: 16px;
@@ -326,13 +326,13 @@ header {
 .mini-search-bar input[type="search"] {
     width: 163px;
     height: 36px;
-  }
-  
+}
+
 
 
 /* Stylepour les cards */
 
-#recipes-list{
+#recipes-list {
     padding-bottom: 15%;
 }
 
@@ -345,13 +345,13 @@ header {
 }
 
 .recipe_img {
-    width: auto;
+    width: 100%;
     height: 253px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
 
-.card-title {
+.card-name {
     font-family: Anton;
     font-size: 18px;
     font-weight: 400;
@@ -377,7 +377,7 @@ header {
 
 .card-ingredients-list {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
 }
 
 .card-ingredients-list-item-name {
@@ -391,4 +391,24 @@ header {
     font-family: Manrope;
     font-size: 14px;
     font-weight: 400;
+}
+
+.remove-item {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-left: 60px;
+}
+
+.selected-ingredient, .selected-appliance, .selected-utensil {
+    padding: 17px 18px;
+    align-items: center;
+    border-radius: 10px;
+    background: #FFD15B;
+    margin-right: 17px;
+}
+
+.tag-list-item:hover{
+
+    background: var(--Yellow, #FFD15B);
+
 }
