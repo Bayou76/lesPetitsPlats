@@ -46,22 +46,24 @@ class App {
         
     }
 
-    updateRecipeCount(visibleRecipeCount = 0) {
+    updateRecipeCount(visibleRecipeCount = 0, searchText = "") {
       const recipeCountElement = document.getElementById("number-recipes");
       let totalRecipeCount = document.querySelectorAll(".card.mt-5").length;
   
       if (visibleRecipeCount === 0) {
-        recipeCountElement.textContent = `${totalRecipeCount} recette${totalRecipeCount > 1 ? "s" : ""
-          }`;
+          if (searchText.trim() === "") {
+              // Si aucun texte de recherche n'est saisi, afficher le nombre total de recettes
+              recipeCountElement.textContent = `${totalRecipeCount} recette${totalRecipeCount > 1 ? "s" : ""}`;
+          } else {
+              // Si un texte de recherche est saisi, afficher le message personnalisé
+              recipeCountElement.textContent = `Aucune recette ne contient '${searchText}', vous pouvez chercher d'autres termes comme 'tarte aux pommes', 'poisson', etc.`;
+          }
       } else {
-        const recipeText =
-          visibleRecipeCount === 0
-            ? "Aucune recette"
-            : `${visibleRecipeCount} recette${visibleRecipeCount > 1 ? "s" : ""}`;
-        recipeCountElement.textContent = recipeText;
+          // Afficher le nombre de recettes correspondant à la recherche
+          const recipeText = `${visibleRecipeCount} recette${visibleRecipeCount > 1 ? "s" : ""}`;
+          recipeCountElement.textContent = recipeText;
       }
-  
-    }
+  }
     
 }
 
