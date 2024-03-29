@@ -83,5 +83,5 @@ function filterAndDisplayRecipes() {
   }
 
   // Mettre à jour le nombre de recettes affichées
-  app.updateRecipeCount(filteredRecipeCards.length);
+  app.updateRecipeCount(filteredRecipeCards.length,searchTerm);
 }
