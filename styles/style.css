@@ -139,6 +139,16 @@ header {
     column-gap: clamp(15px, 4.5vw + 5px, 65px);
 }
 
+.number-container {
+    flex: auto;
+    margin-top: 10px;
+    width: 100%;
+    text-align: end;
+    color: var(--Black, #1B1B1B);
+    font-family: Anton;
+    font-size: 21px;
+}
+
 .taglist1,
 .taglist2,
 .taglist3 {
