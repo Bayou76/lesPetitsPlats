@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ajouter un écouteur d'événements de saisie sur le champ de recherche
     searchInput.addEventListener('input', function() {
         // Vérifier si le champ de recherche contient au moins trois caractères
-        if (searchInput.value.trim().length >= 3) {
+        if (searchInput.value.trim().length >= 1) {
             // Si le champ de recherche contient au moins trois caractères, afficher la croix de recherche
             searchCloseIcon.style.display = 'block';
         } else {
