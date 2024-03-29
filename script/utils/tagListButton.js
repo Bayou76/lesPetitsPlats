@@ -24,3 +24,33 @@ visible3.addEventListener('click', function () {
     taglist3.classList.toggle('open');
 });
 
+
+// boutton croix
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search-input');
+    const searchCloseIcon = document.getElementById('search-close');
+
+    // Ajouter un écouteur d'événements de saisie sur le champ de recherche
+    searchInput.addEventListener('input', function() {
+        // Vérifier si le champ de recherche contient au moins trois caractères
+        if (searchInput.value.trim().length >= 3) {
+            // Si le champ de recherche contient au moins trois caractères, afficher la croix de recherche
+            searchCloseIcon.style.display = 'block';
+        } else {
+            // Sinon, masquer la croix de recherche
+            searchCloseIcon.style.display = 'none';
+        }
+    });
+
+    // Ajouter un écouteur d'événements de clic sur la croix de recherche pour effacer le champ de recherche et afficher toutes les recettes
+    searchCloseIcon.addEventListener('click', function() {
+        // Effacer le contenu du champ de recherche
+        searchInput.value = '';
+        // Masquer la croix de recherche
+        searchCloseIcon.style.display = 'none';
+        
+        // Appeler la fonction filterAndDisplayRecipes pour afficher toutes les recettes
+        filterAndDisplayRecipes();
+    });
+});
